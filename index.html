@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Portfolio | Introduction to Digital Technology and AI Applications</title>
+    <meta
+        name="description"
+        content="A responsive digital portfolio showcasing coursework for the Introduction to Digital Technology and AI Applications course."
+    >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        display: ['Space Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#081223',
+                        mist: '#edf4ff',
+                        cyan: '#67e8f9',
+                        tide: '#0f766e',
+                        coral: '#f97316',
+                        night: '#06101f',
+                    },
+                    boxShadow: {
+                        glow: '0 20px 60px rgba(8, 18, 35, 0.14)',
+                        neon: '0 0 0 1px rgba(103, 232, 249, 0.24), 0 24px 80px rgba(3, 7, 18, 0.38)',
+                    },
+                    backgroundImage: {
+                        mesh: 'radial-gradient(circle at 20% 20%, rgba(103, 232, 249, 0.16), transparent 28%), radial-gradient(circle at 80% 0%, rgba(249, 115, 22, 0.18), transparent 24%), radial-gradient(circle at 50% 100%, rgba(15, 118, 110, 0.18), transparent 26%)',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased transition-colors duration-500 selection:bg-cyan/30 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div class="fixed inset-0 -z-20 bg-slate-50 dark:bg-slate-950"></div>
+    <div class="fixed inset-0 -z-10 bg-mesh opacity-90"></div>
+    <div class="fixed inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-white/70 via-white/20 to-transparent blur-3xl dark:from-cyan/10 dark:via-slate-950/30"></div>
+
+    <header class="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl transition-colors duration-500 dark:border-white/10 dark:bg-slate-950/70">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <a href="#intro" data-route-link="intro" class="flex items-center gap-3">
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold tracking-[0.3em] text-white shadow-glow dark:bg-cyan/20 dark:text-cyan">DT</div>
+                <div>
+                    <p class="font-display text-lg font-bold text-slate-900 dark:text-white">Digital Portfolio</p>
+                    <p class="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">AI Applications Coursework</p>
+                </div>
+            </a>
+
+            <div class="hidden items-center gap-2 rounded-full border border-slate-200 bg-white/80 p-1 shadow-glow dark:border-white/10 dark:bg-white/5 md:flex">
+                <button type="button" data-route="intro" class="nav-pill">Introduction</button>
+                <button type="button" data-route="projects" class="nav-pill">Projects</button>
+                <button type="button" data-route="reflection" class="nav-pill">Reflection</button>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button type="button" id="theme-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10" aria-label="Toggle dark mode">
+                    <svg data-theme-icon="sun" class="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 3v2.2M12 18.8V21M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M3 12h2.2M18.8 12H21M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56M16 12a4 4 0 1 1-8 0a4 4 0 0 1 8 0Z" />
+                    </svg>
+                    <svg data-theme-icon="moon" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20 15.5A7.5 7.5 0 0 1 8.5 4A8.5 8.5 0 1 0 20 15.5Z" />
+                    </svg>
+                </button>
+                <button type="button" id="mobile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10 md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 7h16M4 12h16M4 17h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="mx-auto hidden max-w-7xl px-4 pb-4 sm:px-6 lg:px-8 md:hidden">
+            <div class="space-y-2 rounded-3xl border border-slate-200 bg-white/85 p-3 shadow-glow dark:border-white/10 dark:bg-slate-900/80">
+                <button type="button" data-route="intro" class="mobile-nav-link">Introduction</button>
+                <button type="button" data-route="projects" class="mobile-nav-link">Projects</button>
+                <button type="button" data-route="reflection" class="mobile-nav-link">Reflection</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+        <section id="intro" data-view="intro" class="view-panel space-y-10">
+            <div class="grid gap-8 lg:grid-cols-[1.25fr_0.75fr]">
+                <div class="panel overflow-hidden">
+                    <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+                        <div class="space-y-8">
+                            <span class="eyebrow">Trang Giới thiệu</span>
+                            <div class="space-y-5">
+                                <p class="inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/10 px-4 py-2 text-sm font-medium text-cyan-700 dark:text-cyan">
+                                    <span class="h-2 w-2 rounded-full bg-coral"></span>
+                                    Introduction to Digital Technology and AI Applications
+                                </p>
+                                <h1 class="font-display text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+                                    A strategic portfolio for digital fluency, applied AI, and professional growth.
+                                </h1>
+                                <p class="max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+                                    Use this section to introduce yourself, clarify your academic path, and position your portfolio as a curated record of technical practice, experimentation, and reflective learning.
+                                </p>
+                            </div>
+                            <div class="grid gap-4 sm:grid-cols-3">
+                                <div class="metric-card">
+                                    <p class="metric-label">Name</p>
+                                    <p class="metric-value">Your Full Name</p>
+                                </div>
+                                <div class="metric-card">
+                                    <p class="metric-label">Major</p>
+                                    <p class="metric-value">Your Major / Program</p>
+                                </div>
+                                <div class="metric-card">
+                                    <p class="metric-label">Hobbies</p>
+                                    <p class="metric-value">Design, coding, reading</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-center">
+                            <div class="avatar-shell">
+                                <div class="avatar-core">
+                                    <div class="text-center">
+                                        <p class="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Avatar</p>
+                                        <p class="mt-4 font-display text-4xl font-bold text-slate-900 dark:text-white">A.I.</p>
+                                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Placeholder portrait</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <article class="panel h-full">
+                        <span class="eyebrow">Learning Objectives</span>
+                        <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Personal development direction</h2>
+                        <div class="mt-6 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                            <p>Summarize the knowledge you expect to gain from the course, such as digital organization, AI-assisted research, prompt design, online collaboration, and responsible technology use.</p>
+                            <p>Describe how these competencies support your long-term direction, whether that is software development, digital communication, data analysis, or another tech-adjacent career path.</p>
+                        </div>
+                        <div class="mt-6 grid gap-3">
+                            <div class="info-chip">Build structured digital workflows</div>
+                            <div class="info-chip">Improve AI-assisted problem solving</div>
+                            <div class="info-chip">Develop professional presentation habits</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="grid gap-6 lg:grid-cols-2">
+                <article class="panel">
+                    <span class="eyebrow">Portfolio Objectives</span>
+                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Purpose of this portfolio</h2>
+                    <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                        <div class="objective-card">
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Showcasing digital skills learned</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how each assignment demonstrates a different area of digital competence, from file management and research to AI content creation and ethics.</p>
+                        </div>
+                        <div class="objective-card">
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Archiving personal products</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Use the portfolio as a long-term archive of academic work that can support internship applications, future coursework, and career storytelling.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <span class="eyebrow">Quick Snapshot</span>
+                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">What visitors should notice first</h2>
+                    <ul class="mt-6 grid gap-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                        <li class="timeline-item">A clear academic identity and professional visual style.</li>
+                        <li class="timeline-item">Evidence of hands-on practice with digital tools and AI-assisted workflows.</li>
+                        <li class="timeline-item">Thoughtful reflection on strengths, limitations, and future application.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" data-view="projects" class="view-panel hidden space-y-8">
+            <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                <div class="max-w-3xl space-y-4">
+                    <span class="eyebrow">Trang Dự án</span>
+                    <h2 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Coursework gallery built around real deliverable formats</h2>
+                    <p class="text-base leading-8 text-slate-600 dark:text-slate-300">This projects view balances presentation and evidence. Exercise 1 highlights an MP4 deliverable with a custom player frame, while Exercises 2-6 use structured DOCX showcase modules with tables, dashboards, comparison blocks, and ethics-driven content areas.</p>
+                </div>
+                <div class="grid gap-3 sm:grid-cols-3 lg:w-[24rem]">
+                    <div class="metric-card">
+                        <p class="metric-label">Assignments</p>
+                        <p class="metric-value">06 Modules</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-label">Formats</p>
+                        <p class="metric-value">MP4 + DOCX</p>
+                    </div>
+                    <div class="metric-card">
+                        <p class="metric-label">Focus</p>
+                        <p class="metric-value">Practice + Reflection</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid gap-6 xl:grid-cols-[17rem_minmax(0,1fr)]">
+                <aside class="panel xl:sticky xl:top-28 h-fit">
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Assignments</p>
+                    <div class="mt-5 space-y-2" aria-label="Exercise navigation">
+                        <a href="#exercise-1" class="exercise-link">Exercise 1 • MP4 Video</a>
+                        <a href="#exercise-2" class="exercise-link">Exercise 2 • Search Report</a>
+                        <a href="#exercise-3" class="exercise-link">Exercise 3 • Prompt Engineering</a>
+                        <a href="#exercise-4" class="exercise-link">Exercise 4 • Teamwork</a>
+                        <a href="#exercise-5" class="exercise-link">Exercise 5 • Content Creation</a>
+                        <a href="#exercise-6" class="exercise-link">Exercise 6 • Responsible AI</a>
+                    </div>
+                    <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-white/5">
+                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Suggested asset folders</p>
+                        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Store your MP4 in assets/media for a cleaner structure. The DOCX buttons below already point to the report files currently placed in the project root.</p>
+                    </div>
+                </aside>
+
+                <div class="space-y-6">
+                    <article id="exercise-1" class="panel">
+                        <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                            <div>
+                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-700 dark:text-cyan">Exercise 1</p>
+                                <h3 class="mt-2 font-display text-3xl font-bold text-slate-900 dark:text-white">File &amp; Folder Management</h3>
+                            </div>
+                            <span class="rounded-full border border-coral/30 bg-coral/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-coral">MP4 video showcase</span>
+                        </div>
+
+                        <div class="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+                            <div class="video-shell">
+                                <div class="video-toolbar">
+                                    <span class="video-dot bg-rose-400"></span>
+                                    <span class="video-dot bg-amber-400"></span>
+                                    <span class="video-dot bg-emerald-400"></span>
+                                    <p class="ml-4 text-xs uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">Presentation Player</p>
+                                </div>
+                                <div class="video-frame">
+                                    <video controls preload="metadata" poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" class="h-full w-full rounded-[1.75rem] object-cover">
+                                        <source src="assets/media/exercise-1-demo.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="subpanel">
+                                    <p class="subpanel-label">Task objective</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how you organized files and folders efficiently, improved naming conventions, and created a cleaner workflow for storing academic materials.</p>
+                                </div>
+                                <div class="subpanel">
+                                    <p class="subpanel-label">Process summary</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Replace this text with your workflow steps: planning folders, sorting file categories, restructuring directories, and reflecting on the benefits of an optimized system.</p>
+                                </div>
+                                <div class="subpanel">
+                                    <p class="subpanel-label">Optimized directory structure</p>
+                                    <div class="mt-4 rounded-2xl bg-slate-900 p-4 text-sm leading-7 text-slate-200 shadow-neon dark:bg-slate-950">
+<pre class="overflow-x-auto whitespace-pre-wrap font-mono text-xs sm:text-sm">Coursework/
+  ├─ Week-01/
+  ├─ Week-02/
+  ├─ Reports/
+  ├─ Media/
+  └─ Portfolio-Assets/</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="exercise-2" class="panel">
+                        <div class="exercise-header">
+                            <div>
+                                <p class="exercise-label">Exercise 2</p>
+                                <h3 class="exercise-title">Academic Information Search</h3>
+                            </div>
+                            <a href="Bài tập tuần 2 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                        </div>
+                        <div class="exercise-grid mt-6">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Task objective</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe how you used advanced search operators, databases, and evaluation criteria to identify reliable academic sources.</p>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Process summary</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Outline your search process, how you refined keywords, compared results, and judged credibility based on authority, relevance, recency, and evidence.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid gap-6 xl:grid-cols-[1fr_0.95fr]">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Advanced search comparison table</p>
+                                <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10">
+                                    <table class="w-full text-left text-sm">
+                                        <thead class="bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                                            <tr>
+                                                <th class="px-4 py-3">Operator</th>
+                                                <th class="px-4 py-3">Search example</th>
+                                                <th class="px-4 py-3">Expected result</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 text-slate-600 dark:divide-white/10 dark:text-slate-300">
+                                            <tr>
+                                                <td class="px-4 py-4 font-medium">site:</td>
+                                                <td class="px-4 py-4">AI ethics site:edu</td>
+                                                <td class="px-4 py-4">University-based sources</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 font-medium">filetype:</td>
+                                                <td class="px-4 py-4">prompt engineering filetype:pdf</td>
+                                                <td class="px-4 py-4">Downloadable academic references</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 font-medium">Quotation marks</td>
+                                                <td class="px-4 py-4">"digital transformation in education"</td>
+                                                <td class="px-4 py-4">Exact phrase results</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Source evaluation matrix</p>
+                                <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                                    <div class="matrix-card">
+                                        <p class="matrix-title">Authority</p>
+                                        <p class="matrix-text">Author credentials and institutional backing</p>
+                                    </div>
+                                    <div class="matrix-card">
+                                        <p class="matrix-title">Accuracy</p>
+                                        <p class="matrix-text">Evidence quality and citation depth</p>
+                                    </div>
+                                    <div class="matrix-card">
+                                        <p class="matrix-title">Currency</p>
+                                        <p class="matrix-text">Publication date and updated relevance</p>
+                                    </div>
+                                    <div class="matrix-card">
+                                        <p class="matrix-title">Purpose</p>
+                                        <p class="matrix-text">Bias, intended audience, and educational value</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="exercise-3" class="panel">
+                        <div class="exercise-header">
+                            <div>
+                                <p class="exercise-label">Exercise 3</p>
+                                <h3 class="exercise-title">Effective Prompt Engineering</h3>
+                            </div>
+                            <a href="Bài tập tuần 3 môn CNS - Nguyễn VIết MInh.docx" download class="download-button">Download Report (.docx)</a>
+                        </div>
+                        <div class="exercise-grid mt-6">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Task objective</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how prompt structure, specificity, context, and constraints improved the quality of AI-generated responses.</p>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Process summary</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Document your iterations, what changed between versions, and how you evaluated the clarity, usefulness, and relevance of the AI output.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 lg:grid-cols-3">
+                            <div class="comparison-card">
+                                <p class="comparison-label">Initial prompt</p>
+                                <p class="comparison-text">“Write something about AI in education.”</p>
+                            </div>
+                            <div class="comparison-card comparison-card-highlight">
+                                <p class="comparison-label">Improved prompt</p>
+                                <p class="comparison-text">“Write a 200-word academic summary about AI in education for first-year university students, focusing on benefits, risks, and one real-world example.”</p>
+                            </div>
+                            <div class="comparison-card">
+                                <p class="comparison-label">AI output insight</p>
+                                <p class="comparison-text">Add a concise analysis of how the improved prompt produced clearer structure, stronger relevance, and more actionable output.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="exercise-4" class="panel">
+                        <div class="exercise-header">
+                            <div>
+                                <p class="exercise-label">Exercise 4</p>
+                                <h3 class="exercise-title">Online Collaboration &amp; Teamwork</h3>
+                            </div>
+                            <a href="Bài tập tuần 4 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                        </div>
+                        <div class="exercise-grid mt-6">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Task objective</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize how digital tools supported communication, delegation, status tracking, and accountability during collaborative work.</p>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Process summary</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe planning meetings, shared task ownership, progress reporting, and adjustments made when challenges affected the timeline.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 xl:grid-cols-3">
+                            <div class="kanban-column">
+                                <p class="kanban-title">To Do</p>
+                                <div class="kanban-card">Collect team requirements</div>
+                                <div class="kanban-card">Draft meeting agenda</div>
+                            </div>
+                            <div class="kanban-column">
+                                <p class="kanban-title">In Progress</p>
+                                <div class="kanban-card">Assign presentation roles</div>
+                                <div class="kanban-card">Review shared document edits</div>
+                            </div>
+                            <div class="kanban-column">
+                                <p class="kanban-title">Completed</p>
+                                <div class="kanban-card">Finalize team timeline</div>
+                                <div class="kanban-card">Confirm submission checklist</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="exercise-5" class="panel">
+                        <div class="exercise-header">
+                            <div>
+                                <p class="exercise-label">Exercise 5</p>
+                                <h3 class="exercise-title">Generative AI for Content Creation</h3>
+                            </div>
+                            <a href="Bài tập tuần 5 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                        </div>
+                        <div class="exercise-grid mt-6">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Task objective</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Present how generative AI supported ideation, drafting, visual experimentation, or multimedia content production in a structured workflow.</p>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Process summary</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Replace this copy with the tools used, the prompts or inputs created, revision cycles, and the criteria used to select the final outputs.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                            <div class="gallery-card gallery-tall">
+                                <div>
+                                    <p class="gallery-tag">Poster</p>
+                                    <h4 class="gallery-title">AI visual concept</h4>
+                                </div>
+                            </div>
+                            <div class="gallery-card">
+                                <div>
+                                    <p class="gallery-tag">Script</p>
+                                    <h4 class="gallery-title">Caption drafting</h4>
+                                </div>
+                            </div>
+                            <div class="gallery-card">
+                                <div>
+                                    <p class="gallery-tag">Audio</p>
+                                    <h4 class="gallery-title">Voiceover planning</h4>
+                                </div>
+                            </div>
+                            <div class="gallery-card gallery-accent">
+                                <div>
+                                    <p class="gallery-tag">Storyboard</p>
+                                    <h4 class="gallery-title">Product sequence</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article id="exercise-6" class="panel">
+                        <div class="exercise-header">
+                            <div>
+                                <p class="exercise-label">Exercise 6</p>
+                                <h3 class="exercise-title">Responsible AI in Learning &amp; Research</h3>
+                            </div>
+                            <a href="Bài tập tuần 6 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                        </div>
+                        <div class="exercise-grid mt-6">
+                            <div class="subpanel">
+                                <p class="subpanel-label">Task objective</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Define your approach to using AI responsibly in academic settings, with attention to ethics, transparency, and academic integrity.</p>
+                            </div>
+                            <div class="subpanel">
+                                <p class="subpanel-label">Process summary</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize what responsible use means to you, the risks you identified, and the concrete rules you will follow in future coursework and research.</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            <div class="principle-card">Always verify AI-generated facts before using them in coursework.</div>
+                            <div class="principle-card">Cite or disclose AI assistance whenever course rules require transparency.</div>
+                            <div class="principle-card">Protect personal and sensitive data when using online AI systems.</div>
+                            <div class="principle-card">Use AI to support learning, not replace independent thinking.</div>
+                            <div class="principle-card">Check for bias, missing perspectives, and harmful assumptions.</div>
+                            <div class="principle-card">Respect copyright and the original work of others.</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection" data-view="reflection" class="view-panel hidden space-y-6">
+            <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+                <article class="panel">
+                    <span class="eyebrow">Trang Tổng kết</span>
+                    <h2 class="mt-4 font-display text-4xl font-bold text-slate-900 dark:text-white">Reflection, growth, and future application</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">Use this page to present your project journey with honesty and depth. A strong reflection explains how your confidence evolved, what skills improved most, and how the course changed the way you approach digital tools and AI.</p>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                        <div class="objective-card">
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Experiences &amp; emotions</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe the moments that felt exciting, difficult, surprising, or satisfying throughout the portfolio-building process.</p>
+                        </div>
+                        <div class="objective-card">
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Knowledge &amp; skills gained</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize the digital, research, communication, and AI literacy skills that you can now apply more confidently.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <span class="eyebrow">Self Assessment</span>
+                    <div class="mt-6 space-y-4">
+                        <div class="reflection-card">
+                            <p class="reflection-label">Most satisfying elements</p>
+                            <p class="reflection-text">Add the parts of the project you are proudest of, such as strong visual organization, better prompt writing, effective teamwork, or your ability to present information professionally.</p>
+                        </div>
+                        <div class="reflection-card">
+                            <p class="reflection-label">Challenges faced</p>
+                            <p class="reflection-text">Document the obstacles you encountered, such as time management, tool limitations, technical issues, or difficulty evaluating AI output critically.</p>
+                        </div>
+                        <div class="reflection-card">
+                            <p class="reflection-label">Future application</p>
+                            <p class="reflection-text">Explain how the digital methods and AI practices from this course can be used in future classes, internships, freelance work, or personal learning projects.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <article class="panel">
+                <span class="eyebrow">Closing Statement</span>
+                <div class="mt-6 grid gap-4 lg:grid-cols-3">
+                    <div class="timeline-item">I became more systematic in organizing digital materials and managing outputs across different file types.</div>
+                    <div class="timeline-item">I learned to treat AI as a tool that needs direction, verification, and ethical boundaries.</div>
+                    <div class="timeline-item">I now have a portfolio foundation that can evolve with future coursework and professional projects.</div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-200/80 bg-white/70 backdrop-blur-xl transition-colors duration-500 dark:border-white/10 dark:bg-slate-950/70">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-slate-600 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8 dark:text-slate-400">
+            <div>
+                <p class="font-semibold text-slate-900 dark:text-white">Digital Portfolio Template</p>
+                <p>Designed for the Introduction to Digital Technology and AI Applications course.</p>
+            </div>
+            <div class="flex flex-wrap gap-4">
+                <a href="#intro" data-route-link="intro" class="footer-link">Introduction</a>
+                <a href="#projects" data-route-link="projects" class="footer-link">Projects</a>
+                <a href="#reflection" data-route-link="reflection" class="footer-link">Reflection</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
