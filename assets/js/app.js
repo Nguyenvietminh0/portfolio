@@ -7,6 +7,8 @@ const routeButtons = [...document.querySelectorAll('[data-route]')];
 const routeLinks = [...document.querySelectorAll('[data-route-link]')];
 const exerciseLinks = [...document.querySelectorAll('.exercise-link')];
 const projectsView = document.getElementById('projects');
+const revealElements = [...document.querySelectorAll('[data-reveal]')];
+const scrollProgress = document.getElementById('scroll-progress');
 const storageKey = 'digital-portfolio-theme';
 
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -21,6 +23,81 @@ try {
 const applyTheme = (theme) => {
     const shouldUseDark = theme === 'dark';
     htmlRoot.classList.toggle('dark', shouldUseDark);
+};
+
+const updateScrollProgress = () => {
+    if (!scrollProgress) {
+        return;
+    }
+
+    const activePanel = viewPanels.find((panel) => !panel.classList.contains('hidden'));
+    if (!activePanel) {
+        scrollProgress.style.transform = 'scaleX(0)';
+        return;
+    }
+
+    const panelTop = activePanel.offsetTop;
+    const maxScrollable = Math.max(activePanel.offsetHeight - window.innerHeight, 1);
+    const current = Math.min(Math.max(window.scrollY - panelTop, 0), maxScrollable);
+    const progress = maxScrollable <= 1 ? 1 : current / maxScrollable;
+
+    scrollProgress.style.transform = `scaleX(${progress})`;
+};
+
+let scrollTicking = false;
+
+const requestScrollProgressUpdate = () => {
+    if (scrollTicking) {
+        return;
+    }
+
+    scrollTicking = true;
+    window.requestAnimationFrame(() => {
+        scrollTicking = false;
+        updateScrollProgress();
+    });
+};
+
+const revealObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.12,
+            rootMargin: '0px 0px -10% 0px',
+        },
+    )
+    : null;
+
+revealElements.forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
+
+    if (revealObserver) {
+        revealObserver.observe(element);
+        return;
+    }
+
+    element.classList.add('is-visible');
+});
+
+const refreshAnimations = () => {
+    if (revealObserver) {
+        revealElements.forEach((element) => {
+            if (!element.classList.contains('is-visible')) {
+                revealObserver.observe(element);
+            }
+        });
+    }
+
+    requestScrollProgressUpdate();
 };
 
 applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
@@ -94,12 +171,15 @@ const setActiveRoute = (routeName, options = {}) => {
     if (anchorId) {
         const anchorElement = document.getElementById(anchorId);
         anchorElement?.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+        refreshAnimations();
         return;
     }
 
     if (scrollToTop) {
         window.scrollTo({ top: 0, behavior: scrollBehavior });
     }
+
+    refreshAnimations();
 };
 
 routeButtons.forEach((button) => {
@@ -155,3 +235,7 @@ setActiveRoute(initialState.route, {
     scrollBehavior: 'auto',
     scrollToTop: !initialState.anchorId,
 });
+
+window.addEventListener('scroll', requestScrollProgressUpdate, { passive: true });
+window.addEventListener('resize', requestScrollProgressUpdate);
+requestScrollProgressUpdate();

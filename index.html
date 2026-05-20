@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Portfolio | Introduction to Digital Technology and AI Applications</title>
+    <title>Nguyễn Viết Minh | Digital Portfolio CNS và AI</title>
     <meta
         name="description"
-        content="A responsive digital portfolio showcasing coursework for the Introduction to Digital Technology and AI Applications course."
+        content="Digital Portfolio của Nguyễn Viết Minh cho môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo."
     >
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -42,36 +42,37 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 antialiased transition-colors duration-500 selection:bg-cyan-300/30 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div id="scroll-progress" class="fixed inset-x-0 top-0 z-[60] h-1 origin-left scale-x-0 bg-gradient-to-r from-cyan-400 via-teal-500 to-orange-400"></div>
     <div class="fixed inset-0 -z-20 bg-slate-50 dark:bg-slate-950"></div>
     <div class="fixed inset-0 -z-10 bg-mesh opacity-90"></div>
     <div class="fixed inset-x-0 top-0 -z-10 h-72 bg-gradient-to-b from-white/70 via-white/20 to-transparent blur-3xl dark:from-cyan-400/10 dark:via-slate-950/30"></div>
 
     <header class="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-2xl transition-colors duration-500 dark:border-white/10 dark:bg-slate-950/70">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8" aria-label="Điều hướng chính">
             <a href="#intro" data-route-link="intro" class="flex items-center gap-3">
-                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold tracking-[0.3em] text-white shadow-glow dark:bg-cyan-400/20 dark:text-cyan-300">DT</div>
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-sm font-bold tracking-[0.24em] text-white shadow-glow dark:bg-cyan-400/20 dark:text-cyan-300">NVM</div>
                 <div>
                     <p class="font-display text-lg font-bold text-slate-900 dark:text-white">Digital Portfolio</p>
-                    <p class="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">AI Applications Coursework</p>
+                    <p class="text-xs uppercase tracking-[0.28em] text-slate-500 dark:text-slate-400">Sinh học • Công nghệ số • AI</p>
                 </div>
             </a>
 
             <div class="hidden items-center gap-2 rounded-full border border-slate-200 bg-white/80 p-1 shadow-glow dark:border-white/10 dark:bg-white/5 md:flex">
-                <button type="button" data-route="intro" class="nav-pill">Introduction</button>
-                <button type="button" data-route="projects" class="nav-pill">Projects</button>
-                <button type="button" data-route="reflection" class="nav-pill">Reflection</button>
+                <button type="button" data-route="intro" class="nav-pill">Giới thiệu</button>
+                <button type="button" data-route="projects" class="nav-pill">Dự án</button>
+                <button type="button" data-route="reflection" class="nav-pill">Tổng kết</button>
             </div>
 
             <div class="flex items-center gap-3">
-                <button type="button" id="theme-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10" aria-label="Toggle dark mode">
-                    <svg data-theme-icon="sun" class="h-5 w-5 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <button type="button" id="theme-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:-translate-y-0.5 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10" aria-label="Đổi giao diện sáng tối">
+                    <svg data-theme-icon="sun" class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                         <path d="M12 3v2.2M12 18.8V21M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M3 12h2.2M18.8 12H21M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56M16 12a4 4 0 1 1-8 0a4 4 0 0 1 8 0Z" />
                     </svg>
                     <svg data-theme-icon="moon" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                         <path d="M20 15.5A7.5 7.5 0 0 1 8.5 4A8.5 8.5 0 1 0 20 15.5Z" />
                     </svg>
                 </button>
-                <button type="button" id="mobile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10 md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+                <button type="button" id="mobile-menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white/80 text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 dark:border-white/10 dark:bg-white/5 dark:text-slate-100 dark:hover:bg-white/10 md:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Mở menu">
                     <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                         <path d="M4 7h16M4 12h16M4 17h16" />
                     </svg>
@@ -81,55 +82,68 @@
 
         <div id="mobile-menu" class="mx-auto hidden max-w-7xl px-4 pb-4 sm:px-6 lg:px-8 md:hidden">
             <div class="space-y-2 rounded-3xl border border-slate-200 bg-white/85 p-3 shadow-glow dark:border-white/10 dark:bg-slate-900/80">
-                <button type="button" data-route="intro" class="mobile-nav-link">Introduction</button>
-                <button type="button" data-route="projects" class="mobile-nav-link">Projects</button>
-                <button type="button" data-route="reflection" class="mobile-nav-link">Reflection</button>
+                <button type="button" data-route="intro" class="mobile-nav-link">Giới thiệu</button>
+                <button type="button" data-route="projects" class="mobile-nav-link">Dự án</button>
+                <button type="button" data-route="reflection" class="mobile-nav-link">Tổng kết</button>
             </div>
         </div>
     </header>
 
     <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
         <section id="intro" data-view="intro" class="view-panel space-y-10">
-            <div class="grid gap-8 lg:grid-cols-[1.25fr_0.75fr]">
-                <div class="panel overflow-hidden">
-                    <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-                        <div class="space-y-8">
+            <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+                <div data-reveal class="panel overflow-hidden">
+                    <div class="space-y-8">
+                        <div class="space-y-5 max-w-4xl">
                             <span class="eyebrow">Trang Giới thiệu</span>
-                            <div class="space-y-5">
-                                <p class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-700 dark:text-cyan-300">
-                                    <span class="h-2 w-2 rounded-full bg-coral"></span>
-                                    Introduction to Digital Technology and AI Applications
-                                </p>
-                                <h1 class="font-display text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-                                    A strategic portfolio for digital fluency, applied AI, and professional growth.
-                                </h1>
-                                <p class="max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-                                    Use this section to introduce yourself, clarify your academic path, and position your portfolio as a curated record of technical practice, experimentation, and reflective learning.
-                                </p>
-                            </div>
-                            <div class="grid gap-4 sm:grid-cols-3">
-                                <div class="metric-card">
-                                    <p class="metric-label">Name</p>
-                                    <p class="metric-value">Your Full Name</p>
-                                </div>
-                                <div class="metric-card">
-                                    <p class="metric-label">Major</p>
-                                    <p class="metric-value">Your Major / Program</p>
-                                </div>
-                                <div class="metric-card">
-                                    <p class="metric-label">Hobbies</p>
-                                    <p class="metric-value">Design, coding, reading</p>
-                                </div>
-                            </div>
+                            <p class="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-700 dark:text-cyan-300">
+                                <span class="h-2 w-2 rounded-full bg-coral"></span>
+                                Digital Portfolio môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo
+                            </p>
+                            <h1 class="max-w-5xl font-display text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+                                <span class="block">Digital Portfolio</span>
+                                <span class="mt-2 block text-3xl text-slate-700 dark:text-slate-200 sm:text-4xl lg:text-5xl">AI-Công nghệ-Sinh học</span>
+                            </h1>
+                            <p class="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+                                Tôi là Nguyễn Viết Minh, sinh viên lớp K70 Tài năng Sinh học, Trường Đại học Khoa học Tự nhiên. Website này được thiết kế như một không gian học thuật hiện đại để lưu trữ, trình bày và phân tích quá trình rèn luyện kỹ năng số trong bối cảnh học tập và nghiên cứu khoa học.
+                            </p>
                         </div>
 
-                        <div class="flex items-center justify-center">
-                            <div class="avatar-shell">
-                                <div class="avatar-core">
-                                    <div class="text-center">
-                                        <p class="text-xs uppercase tracking-[0.4em] text-slate-500 dark:text-slate-400">Avatar</p>
-                                        <p class="mt-4 font-display text-4xl font-bold text-slate-900 dark:text-white">A.I.</p>
-                                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Placeholder portrait</p>
+                        <div class="grid gap-6 xl:grid-cols-[1.12fr_0.88fr] xl:items-center">
+                            <div class="space-y-6">
+                                <div class="grid gap-4 sm:grid-cols-3">
+                                    <div class="metric-card">
+                                        <p class="metric-label">Họ tên</p>
+                                        <p class="metric-value">Nguyễn Viết Minh</p>
+                                    </div>
+                                    <div class="metric-card">
+                                        <p class="metric-label">Lớp học</p>
+                                        <p class="metric-value">K70 Tài năng Sinh học</p>
+                                    </div>
+                                    <div class="metric-card">
+                                        <p class="metric-label">Đơn vị</p>
+                                        <p class="metric-value">Đại học Khoa học Tự nhiên</p>
+                                    </div>
+                                </div>
+                                <div class="intro-copy-card">
+                                    <p class="intro-copy-label">Giới thiệu bản thân</p>
+                                    <p class="mt-3 text-sm leading-8 text-slate-600 dark:text-slate-300">Tôi định hướng phát triển theo con đường nghiên cứu Sinh học, đồng thời chủ động học và ứng dụng công nghệ số để tăng hiệu quả học tập, tổ chức dữ liệu và tiếp cận các bài toán khoa học hiện đại bằng tư duy hệ thống.</p>
+                                </div>
+                                <div class="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                                    <div class="bio-pill">Nghiên cứu khoa học</div>
+                                    <div class="bio-pill">Tư duy dữ liệu</div>
+                                    <div class="bio-pill">AI có trách nhiệm</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-center xl:justify-end">
+                                <div class="avatar-shell avatar-shell-portrait w-full max-w-none md:max-w-sm xl:max-w-md">
+                                    <div class="avatar-core avatar-photo-frame">
+                                        <img
+                                            src="Ảnh/1779249333757_860596288419959852_334225772976589182_c43d396a27a8947e10336a25889b4845.jpg"
+                                            alt="Ảnh chân dung của Nguyễn Viết Minh"
+                                            class="avatar-image"
+                                        >
                                     </div>
                                 </div>
                             </div>
@@ -138,356 +152,385 @@
                 </div>
 
                 <div class="space-y-6">
-                    <article class="panel h-full">
-                        <span class="eyebrow">Learning Objectives</span>
-                        <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Personal development direction</h2>
+                    <article data-reveal class="panel h-full">
+                        <span class="eyebrow">Mục tiêu học tập</span>
+                        <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Định hướng phát triển bản thân</h2>
                         <div class="mt-6 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                            <p>Summarize the knowledge you expect to gain from the course, such as digital organization, AI-assisted research, prompt design, online collaboration, and responsible technology use.</p>
-                            <p>Describe how these competencies support your long-term direction, whether that is software development, digital communication, data analysis, or another tech-adjacent career path.</p>
+                            <p>Tôi hiện đang là sinh viên ngành Sinh học tại Trường Đại học Khoa học Tự nhiên – Đại học Quốc gia Hà Nội, ngôi trường giàu truyền thống với niềm đam mê nghiên cứu khoa học bất tận. Ngay từ khi bước chân vào giảng đường, mục tiêu lớn nhất của tôi là không ngừng tích lũy kiến thức nền tảng vững chắc, kết hợp với việc làm chủ các công cụ công nghệ số và ứng dụng Trí tuệ nhân tạo hiện đại để tối ưu hóa quá trình học tập cũng như nghiên cứu.</p>
+                            <p>Trong tương lai, định hướng rõ ràng của tôi là trở thành một chuyên gia chuyên sâu trong lĩnh vực Sinh học. Tôi mong muốn có thể ứng dụng những hiểu biết của mình để giải quyết các bài toán thực tiễn về ô nhiễm môi trường, biến đổi khí hậu và đa dạng sinh học. Đối với tôi, việc xây dựng Digital Portfolio này không chỉ là một thử thách kỹ thuật, mà còn là bước đi đầu tiên giúp tôi hệ thống hóa tư duy dữ liệu và kỹ năng số trên con đường trở thành một nhà khoa học chuẩn mực trong kỷ nguyên số.</p>
                         </div>
                         <div class="mt-6 grid gap-3">
-                            <div class="info-chip">Build structured digital workflows</div>
-                            <div class="info-chip">Improve AI-assisted problem solving</div>
-                            <div class="info-chip">Develop professional presentation habits</div>
+                            <div class="info-chip">Xây dựng nền tảng kiến thức Sinh học bền vững song hành cùng kỹ năng số</div>
+                            <div class="info-chip">Làm chủ công cụ AI để hỗ trợ học tập, tổng hợp và nghiên cứu thông minh hơn</div>
+                            <div class="info-chip">Hình thành tư duy hệ thống, đạo đức khoa học và năng lực trình bày chuyên nghiệp</div>
                         </div>
                     </article>
                 </div>
             </div>
 
             <div class="grid gap-6 lg:grid-cols-2">
-                <article class="panel">
-                    <span class="eyebrow">Portfolio Objectives</span>
-                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Purpose of this portfolio</h2>
+                <article data-reveal class="panel">
+                    <span class="eyebrow">Mục tiêu Digital Portfolio</span>
+                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Hệ thống hóa hành trình học tập và năng lực số</h2>
                     <div class="mt-6 grid gap-4 sm:grid-cols-2">
                         <div class="objective-card">
-                            <h3 class="font-semibold text-slate-900 dark:text-white">Showcasing digital skills learned</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how each assignment demonstrates a different area of digital competence, from file management and research to AI content creation and ethics.</p>
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Minh chứng quá trình tích lũy kỹ năng</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Digital Portfolio này được xây dựng nhằm hệ thống hóa và minh chứng cho toàn bộ hành trình trải nghiệm, tích lũy kiến thức và phát triển kỹ năng số thông qua môn học. Mỗi bài tập là một bằng chứng cụ thể cho sự tiến bộ trong quản lý dữ liệu, khai thác thông tin, kỹ nghệ prompt và sử dụng AI có trách nhiệm.</p>
                         </div>
                         <div class="objective-card">
-                            <h3 class="font-semibold text-slate-900 dark:text-white">Archiving personal products</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Use the portfolio as a long-term archive of academic work that can support internship applications, future coursework, and career storytelling.</p>
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Định hình tư duy công nghệ cho Sinh học</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Đây không chỉ là nơi lưu trữ sản phẩm học tập cá nhân mà còn là công cụ chuyên nghiệp giúp tôi kết nối nền tảng khoa học dữ liệu với chuyên ngành Sinh học trong tương lai, sẵn sàng cho nghiên cứu, phòng thí nghiệm và các dự án liên ngành.</p>
                         </div>
                     </div>
                 </article>
 
-                <article class="panel">
-                    <span class="eyebrow">Quick Snapshot</span>
-                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">What visitors should notice first</h2>
+                <article data-reveal class="panel">
+                    <span class="eyebrow">Chân dung nhanh</span>
+                    <h2 class="mt-4 font-display text-2xl font-bold text-slate-900 dark:text-white">Những điểm nổi bật của hồ sơ</h2>
                     <ul class="mt-6 grid gap-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                        <li class="timeline-item">A clear academic identity and professional visual style.</li>
-                        <li class="timeline-item">Evidence of hands-on practice with digital tools and AI-assisted workflows.</li>
-                        <li class="timeline-item">Thoughtful reflection on strengths, limitations, and future application.</li>
+                        <li class="timeline-item">Bản sắc học thuật rõ ràng: sinh viên Sinh học hướng đến nghiên cứu chuyên sâu trong bối cảnh số hóa.</li>
+                        <li class="timeline-item">Minh chứng thực hành đầy đủ qua 6 bài tập, từ tổ chức dữ liệu đến sáng tạo và đạo đức AI.</li>
+                        <li class="timeline-item">Tư duy phản biện, tính hệ thống và khả năng kết nối công nghệ với bài toán khoa học thực tiễn.</li>
                     </ul>
                 </article>
             </div>
         </section>
 
         <section id="projects" data-view="projects" class="view-panel hidden space-y-8">
-            <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div data-reveal class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
                 <div class="max-w-3xl space-y-4">
                     <span class="eyebrow">Trang Dự án</span>
-                    <h2 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Coursework gallery built around real deliverable formats</h2>
-                    <p class="text-base leading-8 text-slate-600 dark:text-slate-300">This projects view balances presentation and evidence. Exercise 1 highlights an MP4 deliverable with a custom player frame, while Exercises 2-6 use structured DOCX showcase modules with tables, dashboards, comparison blocks, and ethics-driven content areas.</p>
+                    <h2 class="font-display text-4xl font-bold text-slate-900 dark:text-white">Không gian tái hiện trọn vẹn hành trình thực hành 6 bài tập cốt lõi</h2>
+                    <p class="text-base leading-8 text-slate-600 dark:text-slate-300">Đây là nơi lưu trữ và trình bày lại quá trình rèn luyện tư duy số của tôi. Mỗi dự án đánh dấu một cột mốc từ việc tối ưu hóa quản lý dữ liệu cá nhân, khai thác thông tin học thuật, làm việc nhóm trên không gian số cho tới sử dụng Trí tuệ nhân tạo thông minh, hiệu quả và có trách nhiệm.</p>
                 </div>
                 <div class="grid gap-3 sm:grid-cols-3 lg:w-[24rem]">
                     <div class="metric-card">
-                        <p class="metric-label">Assignments</p>
-                        <p class="metric-value">06 Modules</p>
+                        <p class="metric-label">Thành phần</p>
+                        <p class="metric-value">06 bài tập</p>
                     </div>
                     <div class="metric-card">
-                        <p class="metric-label">Formats</p>
-                        <p class="metric-value">MP4 + DOCX</p>
+                        <p class="metric-label">Định dạng</p>
+                        <p class="metric-value">Video + tài liệu</p>
                     </div>
                     <div class="metric-card">
-                        <p class="metric-label">Focus</p>
-                        <p class="metric-value">Practice + Reflection</p>
+                        <p class="metric-label">Trọng tâm</p>
+                        <p class="metric-value">Thực hành + phản biện</p>
                     </div>
                 </div>
             </div>
 
             <div class="grid gap-6 xl:grid-cols-[17rem_minmax(0,1fr)]">
-                <aside class="panel xl:sticky xl:top-28 h-fit">
-                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Assignments</p>
-                    <div class="mt-5 space-y-2" aria-label="Exercise navigation">
-                        <a href="#exercise-1" class="exercise-link">Exercise 1 • MP4 Video</a>
-                        <a href="#exercise-2" class="exercise-link">Exercise 2 • Search Report</a>
-                        <a href="#exercise-3" class="exercise-link">Exercise 3 • Prompt Engineering</a>
-                        <a href="#exercise-4" class="exercise-link">Exercise 4 • Teamwork</a>
-                        <a href="#exercise-5" class="exercise-link">Exercise 5 • Content Creation</a>
-                        <a href="#exercise-6" class="exercise-link">Exercise 6 • Responsible AI</a>
+                <aside data-reveal class="panel h-fit xl:sticky xl:top-28">
+                    <p class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400">Danh mục bài tập</p>
+                    <div class="mt-5 space-y-2" aria-label="Điều hướng bài tập">
+                        <a href="#exercise-1" class="exercise-link">Bài 1 • Tệp tin và thư mục</a>
+                        <a href="#exercise-2" class="exercise-link">Bài 2 • Khai thác dữ liệu</a>
+                        <a href="#exercise-3" class="exercise-link">Bài 3 • Kỹ nghệ prompt</a>
+                        <a href="#exercise-4" class="exercise-link">Bài 4 • Hợp tác số</a>
+                        <a href="#exercise-5" class="exercise-link">Bài 5 • Sáng tạo nội dung</a>
+                        <a href="#exercise-6" class="exercise-link">Bài 6 • Liêm chính học thuật</a>
                     </div>
                     <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50/80 p-4 dark:border-white/10 dark:bg-white/5">
-                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Suggested asset folders</p>
-                        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Store your MP4 in assets/media for a cleaner structure. The DOCX buttons below already point to the report files currently placed in the project root.</p>
+                        <p class="text-sm font-semibold text-slate-900 dark:text-white">Logic trình bày</p>
+                        <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Mỗi thẻ dự án được thiết kế theo 4 lớp thông tin: mục tiêu đề bài, quá trình thực hiện, bài học rút ra và sản phẩm minh chứng. Cấu trúc này giúp hồ sơ dễ đọc, dễ đối chiếu và phù hợp với cách chấm điểm học thuật.</p>
                     </div>
                 </aside>
 
                 <div class="space-y-6">
-                    <article id="exercise-1" class="panel">
+                    <article id="exercise-1" data-exercise="01" data-reveal class="panel exercise-card tone-cyan">
                         <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                             <div>
-                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-700 dark:text-cyan-300">Exercise 1</p>
-                                <h3 class="mt-2 font-display text-3xl font-bold text-slate-900 dark:text-white">File &amp; Folder Management</h3>
+                                <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-700 dark:text-cyan-300">Bài 1</p>
+                                <h3 class="mt-2 font-display text-3xl font-bold text-slate-900 dark:text-white">Máy tính và các thiết bị ngoại vi</h3>
                             </div>
-                            <span class="rounded-full border border-coral/30 bg-coral/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-coral">MP4 video showcase</span>
+                            <a href="https://drive.google.com/file/d/17JMfZbdgcGZx7MbwC18JDDKoNvTxc_fu/view?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở video minh chứng</a>
                         </div>
 
-                        <div class="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-                            <div class="video-shell">
-                                <div class="video-toolbar">
-                                    <span class="video-dot bg-rose-400"></span>
-                                    <span class="video-dot bg-amber-400"></span>
-                                    <span class="video-dot bg-emerald-400"></span>
-                                    <p class="ml-4 text-xs uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">Presentation Player</p>
+                        <div class="mt-8 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
+                            <div class="space-y-4">
+                                <div class="video-shell">
+                                    <div class="video-toolbar">
+                                        <span class="video-dot bg-rose-400"></span>
+                                        <span class="video-dot bg-amber-400"></span>
+                                        <span class="video-dot bg-emerald-400"></span>
+                                        <p class="ml-4 text-xs uppercase tracking-[0.32em] text-slate-500 dark:text-slate-400">Bản xem trước Google Drive</p>
+                                    </div>
+                                    <div class="video-frame">
+                                        <iframe
+                                            src="https://drive.google.com/file/d/17JMfZbdgcGZx7MbwC18JDDKoNvTxc_fu/preview"
+                                            class="h-full w-full rounded-[1.75rem]"
+                                            allow="autoplay"
+                                            title="Bài 1 - Video minh chứng"
+                                        ></iframe>
+                                    </div>
                                 </div>
-                                <div class="video-frame">
-                                    <video controls preload="metadata" poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" class="h-full w-full rounded-[1.75rem] object-cover">
-                                        <source src="assets/media/exercise-1-demo.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
+                                <div class="subpanel">
+                                    <p class="subpanel-label">Cấu trúc thư mục mẫu</p>
+                                    <div class="mt-4 rounded-2xl bg-slate-900 p-4 text-sm leading-7 text-slate-200 shadow-neon dark:bg-slate-950">
+<pre class="overflow-x-auto whitespace-pre-wrap font-mono text-xs sm:text-sm">Hoc_tap_CNS/
+  ├─ Bai_1_Quan_ly_tep_tin/
+  ├─ Bai_2_Khai_thac_du_lieu/
+  ├─ Bao_cao_DOCX/
+  ├─ Media_Video/
+  └─ Portfolio_Web/</pre>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="space-y-4">
+                            <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
                                 <div class="subpanel">
-                                    <p class="subpanel-label">Task objective</p>
-                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how you organized files and folders efficiently, improved naming conventions, and created a cleaner workflow for storing academic materials.</p>
+                                    <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Thực hiện thao tác cơ bản với tệp tin và thư mục theo Mục 1.4, đồng thời thiết lập cấu trúc thư mục tối ưu và quy tắc đặt tên khoa học để quản lý dữ liệu học tập hiệu quả.</p>
                                 </div>
                                 <div class="subpanel">
-                                    <p class="subpanel-label">Process summary</p>
-                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Replace this text with your workflow steps: planning folders, sorting file categories, restructuring directories, and reflecting on the benefits of an optimized system.</p>
+                                    <p class="subpanel-label">Quá trình thực hiện</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi đã tiến hành phân loại toàn bộ tài liệu học tập, xây dựng một hệ thống cây thư mục logic theo cấu trúc phân cấp rõ ràng. Đồng thời, tôi áp dụng bộ quy tắc đặt tên tệp tin nhất quán, không dấu, dùng dấu gạch dưới, kèm ngày tháng và phiên bản cụ thể để tối ưu hóa khả năng tìm kiếm.</p>
                                 </div>
-                                <div class="subpanel">
-                                    <p class="subpanel-label">Optimized directory structure</p>
-                                    <div class="mt-4 rounded-2xl bg-slate-900 p-4 text-sm leading-7 text-slate-200 shadow-neon dark:bg-slate-950">
-<pre class="overflow-x-auto whitespace-pre-wrap font-mono text-xs sm:text-sm">Coursework/
-  ├─ Week-01/
-  ├─ Week-02/
-  ├─ Reports/
-  ├─ Media/
-  └─ Portfolio-Assets/</pre>
-                                    </div>
+                                <div class="subpanel sm:col-span-2 xl:col-span-1">
+                                    <p class="subpanel-label">Bài học rút ra</p>
+                                    <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi hiểu rõ tầm quan trọng của việc tổ chức không gian lưu trữ khoa học và rèn luyện được tư duy quản lý dữ liệu hệ thống, giúp tiết kiệm thời gian và tránh thất lạc thông tin trong học tập lâu dài.</p>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <article id="exercise-2" class="panel">
+                    <article id="exercise-2" data-exercise="02" data-reveal class="panel exercise-card tone-teal">
                         <div class="exercise-header">
                             <div>
-                                <p class="exercise-label">Exercise 2</p>
-                                <h3 class="exercise-title">Academic Information Search</h3>
+                                <p class="exercise-label">Bài 2</p>
+                                <h3 class="exercise-title">Khai thác dữ liệu và thông tin</h3>
                             </div>
-                            <a href="Bài tập tuần 2 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                            <a href="https://docs.google.com/document/d/1yqFdFKRMFd8lJXkhUr0k5R_74ZWMDL12oMBoQfsMvjM/edit?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở sản phẩm</a>
                         </div>
                         <div class="exercise-grid mt-6">
                             <div class="subpanel">
-                                <p class="subpanel-label">Task objective</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe how you used advanced search operators, databases, and evaluation criteria to identify reliable academic sources.</p>
+                                <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tìm kiếm và đánh giá thông tin học thuật theo Mục 2.4 bằng cách sử dụng các toán tử tìm kiếm nâng cao và xây dựng bảng đánh giá độ tin cậy của các nguồn tài liệu thu thập được.</p>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Process summary</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Outline your search process, how you refined keywords, compared results, and judged credibility based on authority, relevance, recency, and evidence.</p>
+                                <p class="subpanel-label">Quá trình thực hiện</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi đã vận dụng các toán tử nâng cao như site:, filetype:, intitle: và dấu ngoặc kép trên Google Scholar cùng các cơ sở dữ liệu khoa học để lọc ra tài liệu chuẩn ngành Sinh học. Sau đó, tôi lập bảng ma trận đánh giá nguồn tin dựa trên các tiêu chí nghiêm ngặt như tác giả, độ cập nhật và tính khách quan.</p>
                             </div>
                         </div>
                         <div class="mt-6 grid gap-6 xl:grid-cols-[1fr_0.95fr]">
                             <div class="subpanel">
-                                <p class="subpanel-label">Advanced search comparison table</p>
+                                <p class="subpanel-label">Bảng toán tử tìm kiếm nâng cao</p>
                                 <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10">
                                     <table class="w-full text-left text-sm">
                                         <thead class="bg-slate-100 text-slate-700 dark:bg-white/10 dark:text-slate-200">
                                             <tr>
-                                                <th class="px-4 py-3">Operator</th>
-                                                <th class="px-4 py-3">Search example</th>
-                                                <th class="px-4 py-3">Expected result</th>
+                                                <th class="px-4 py-3">Toán tử</th>
+                                                <th class="px-4 py-3">Ví dụ tìm kiếm</th>
+                                                <th class="px-4 py-3">Kết quả mong đợi</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-slate-200 text-slate-600 dark:divide-white/10 dark:text-slate-300">
                                             <tr>
                                                 <td class="px-4 py-4 font-medium">site:</td>
-                                                <td class="px-4 py-4">AI ethics site:edu</td>
-                                                <td class="px-4 py-4">University-based sources</td>
+                                                <td class="px-4 py-4">biến đổi khí hậu site:edu</td>
+                                                <td class="px-4 py-4">Nguồn học thuật từ trường đại học</td>
                                             </tr>
                                             <tr>
                                                 <td class="px-4 py-4 font-medium">filetype:</td>
-                                                <td class="px-4 py-4">prompt engineering filetype:pdf</td>
-                                                <td class="px-4 py-4">Downloadable academic references</td>
+                                                <td class="px-4 py-4">biodiversity loss filetype:pdf</td>
+                                                <td class="px-4 py-4">Tài liệu PDF có thể đối chiếu nhanh</td>
                                             </tr>
                                             <tr>
-                                                <td class="px-4 py-4 font-medium">Quotation marks</td>
-                                                <td class="px-4 py-4">"digital transformation in education"</td>
-                                                <td class="px-4 py-4">Exact phrase results</td>
+                                                <td class="px-4 py-4 font-medium">intitle:</td>
+                                                <td class="px-4 py-4">intitle:"molecular biology"</td>
+                                                <td class="px-4 py-4">Bài báo có tiêu đề sát chủ đề</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 font-medium">"..."</td>
+                                                <td class="px-4 py-4">"DNA barcoding in biodiversity"</td>
+                                                <td class="px-4 py-4">Kết quả chứa cú pháp chính xác</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Source evaluation matrix</p>
+                                <p class="subpanel-label">Ma trận đánh giá nguồn tin</p>
                                 <div class="mt-4 grid gap-3 sm:grid-cols-2">
                                     <div class="matrix-card">
-                                        <p class="matrix-title">Authority</p>
-                                        <p class="matrix-text">Author credentials and institutional backing</p>
+                                        <p class="matrix-title">Tác giả</p>
+                                        <p class="matrix-text">Học vị, đơn vị công tác và độ uy tín chuyên môn</p>
                                     </div>
                                     <div class="matrix-card">
-                                        <p class="matrix-title">Accuracy</p>
-                                        <p class="matrix-text">Evidence quality and citation depth</p>
+                                        <p class="matrix-title">Độ chính xác</p>
+                                        <p class="matrix-text">Bằng chứng, trích dẫn và tính nhất quán khoa học</p>
                                     </div>
                                     <div class="matrix-card">
-                                        <p class="matrix-title">Currency</p>
-                                        <p class="matrix-text">Publication date and updated relevance</p>
+                                        <p class="matrix-title">Độ cập nhật</p>
+                                        <p class="matrix-text">Năm công bố và giá trị với bối cảnh hiện tại</p>
                                     </div>
                                     <div class="matrix-card">
-                                        <p class="matrix-title">Purpose</p>
-                                        <p class="matrix-text">Bias, intended audience, and educational value</p>
+                                        <p class="matrix-title">Tính khách quan</p>
+                                        <p class="matrix-text">Mục đích xuất bản, thiên kiến và giá trị học thuật</p>
+                                    </div>
+                                    <div class="matrix-card sm:col-span-2">
+                                        <p class="matrix-title">Bài học rút ra</p>
+                                        <p class="matrix-text">Tôi nâng cao tư duy phản biện khi tiếp cận và chọn lọc tài liệu học thuật đáng tin cậy, đồng thời nắm vững kỹ năng định vị thông tin chuẩn xác trong kỷ nguyên bùng nổ dữ liệu.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <article id="exercise-3" class="panel">
+                    <article id="exercise-3" data-exercise="03" data-reveal class="panel exercise-card tone-amber">
                         <div class="exercise-header">
                             <div>
-                                <p class="exercise-label">Exercise 3</p>
-                                <h3 class="exercise-title">Effective Prompt Engineering</h3>
+                                <p class="exercise-label">Bài 3</p>
+                                <h3 class="exercise-title">Tổng quan về Trí tuệ nhân tạo</h3>
                             </div>
-                            <a href="Bài tập tuần 3 môn CNS - Nguyễn VIết MInh.docx" download class="download-button">Download Report (.docx)</a>
+                            <a href="https://docs.google.com/document/d/1zdON_uN1n9xYxbVnErzuM9dA-mEq-qhzhX-iHV_QOwU/edit?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở sản phẩm</a>
                         </div>
                         <div class="exercise-grid mt-6">
                             <div class="subpanel">
-                                <p class="subpanel-label">Task objective</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Explain how prompt structure, specificity, context, and constraints improved the quality of AI-generated responses.</p>
+                                <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Viết prompt hiệu quả cho các tác vụ học tập theo Mục 3.4, thực hiện kỹ nghệ prompt và so sánh kết quả đầu ra giữa các phiên bản lệnh để tối ưu hóa công cụ AI.</p>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Process summary</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Document your iterations, what changed between versions, and how you evaluated the clarity, usefulness, and relevance of the AI output.</p>
+                                <p class="subpanel-label">Quá trình thực hiện</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi đã thử nghiệm xây dựng các câu lệnh có cấu trúc, bổ sung vai trò, bối cảnh và yêu cầu cụ thể để hỗ trợ tóm tắt tài liệu Sinh học. Từ đó, tôi lập bảng đối chiếu sự khác biệt rõ rệt về chất lượng và độ chính xác giữa prompt ban đầu sơ sài và prompt cải tiến.</p>
                             </div>
                         </div>
                         <div class="mt-6 grid gap-4 lg:grid-cols-3">
                             <div class="comparison-card">
-                                <p class="comparison-label">Initial prompt</p>
-                                <p class="comparison-text">“Write something about AI in education.”</p>
+                                <p class="comparison-label">Prompt ban đầu</p>
+                                <p class="comparison-text">"Hãy tóm tắt một tài liệu về Sinh học"</p>
                             </div>
                             <div class="comparison-card comparison-card-highlight">
-                                <p class="comparison-label">Improved prompt</p>
-                                <p class="comparison-text">“Write a 200-word academic summary about AI in education for first-year university students, focusing on benefits, risks, and one real-world example.”</p>
+                                <p class="comparison-label">Prompt cải tiến</p>
+                                <p class="comparison-text">"Đóng vai trò trợ lý học thuật. Hãy tóm tắt tài liệu Sinh học phân tử trong 150-200 từ, tách rõ khái niệm chính, cơ chế sinh học và ý nghĩa ứng dụng, sử dụng văn phong khách quan và dễ hiểu cho sinh viên năm nhất."</p>
                             </div>
                             <div class="comparison-card">
-                                <p class="comparison-label">AI output insight</p>
-                                <p class="comparison-text">Add a concise analysis of how the improved prompt produced clearer structure, stronger relevance, and more actionable output.</p>
+                                <p class="comparison-label">Bài học rút ra</p>
+                                <p class="comparison-text">Tôi hiểu rõ cơ chế hoạt động của các mô hình ngôn ngữ lớn và học được cách “giao tiếp” hiệu quả với AI để khai thác tối đa sức mạnh của công nghệ vào giải quyết bài toán học thuật.</p>
                             </div>
                         </div>
                     </article>
 
-                    <article id="exercise-4" class="panel">
+                    <article id="exercise-4" data-exercise="04" data-reveal class="panel exercise-card tone-sky">
                         <div class="exercise-header">
                             <div>
-                                <p class="exercise-label">Exercise 4</p>
-                                <h3 class="exercise-title">Online Collaboration &amp; Teamwork</h3>
+                                <p class="exercise-label">Bài 4</p>
+                                <h3 class="exercise-title">Giao tiếp và hợp tác trong môi trường số</h3>
                             </div>
-                            <a href="Bài tập tuần 4 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                            <a href="https://docs.google.com/document/d/1lyXim2hJefd7Lre_u05eCQckw5UGW8SdK1AKpffF0Hw/edit?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở sản phẩm</a>
                         </div>
                         <div class="exercise-grid mt-6">
                             <div class="subpanel">
-                                <p class="subpanel-label">Task objective</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize how digital tools supported communication, delegation, status tracking, and accountability during collaborative work.</p>
+                                <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm theo Mục 4.4, trình bày minh chứng về việc áp dụng công cụ quản lý và phối hợp làm việc nhóm trên không gian số.</p>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Process summary</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe planning meetings, shared task ownership, progress reporting, and adjustments made when challenges affected the timeline.</p>
+                                <p class="subpanel-label">Quá trình thực hiện</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi cùng các thành viên trong nhóm đã thiết lập không gian làm việc chung thông qua các nền tảng số như Trello, Notion hoặc Google Workspace. Tôi trực tiếp lập kế hoạch, phân chia nhiệm vụ trên bảng Kanban trực quan và đồng bộ hóa quy trình trao đổi trực tuyến của nhóm.</p>
                             </div>
                         </div>
                         <div class="mt-6 grid gap-4 xl:grid-cols-3">
                             <div class="kanban-column">
-                                <p class="kanban-title">To Do</p>
-                                <div class="kanban-card">Collect team requirements</div>
-                                <div class="kanban-card">Draft meeting agenda</div>
+                                <p class="kanban-title">Cần thực hiện</p>
+                                <div class="kanban-card">Thống nhất mục tiêu và phạm vi bài thuyết trình</div>
+                                <div class="kanban-card">Tạo lịch họp và khung phân công công việc</div>
                             </div>
                             <div class="kanban-column">
-                                <p class="kanban-title">In Progress</p>
-                                <div class="kanban-card">Assign presentation roles</div>
-                                <div class="kanban-card">Review shared document edits</div>
+                                <p class="kanban-title">Đang triển khai</p>
+                                <div class="kanban-card">Phân công vai trò và theo dõi tiến độ từng thành viên</div>
+                                <div class="kanban-card">Cập nhật tài liệu dùng chung và phản hồi chéo</div>
                             </div>
                             <div class="kanban-column">
-                                <p class="kanban-title">Completed</p>
-                                <div class="kanban-card">Finalize team timeline</div>
-                                <div class="kanban-card">Confirm submission checklist</div>
+                                <p class="kanban-title">Đã hoàn thành</p>
+                                <div class="kanban-card">Hoàn thiện timeline và quy trình làm việc nhóm</div>
+                                <div class="kanban-card">Xác nhận checklist nộp bài và tổng hợp kết quả</div>
                             </div>
+                        </div>
+                        <div class="mt-6 subpanel">
+                            <p class="subpanel-label">Bài học rút ra</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi phát triển kỹ năng làm việc nhóm từ xa, tối ưu hóa quy trình phối hợp trực tuyến, tăng tính minh bạch trong theo dõi tiến độ và nâng cao hiệu suất làm việc tập thể.</p>
                         </div>
                     </article>
 
-                    <article id="exercise-5" class="panel">
+                    <article id="exercise-5" data-exercise="05" data-reveal class="panel exercise-card tone-emerald">
                         <div class="exercise-header">
                             <div>
-                                <p class="exercise-label">Exercise 5</p>
-                                <h3 class="exercise-title">Generative AI for Content Creation</h3>
+                                <p class="exercise-label">Bài 5</p>
+                                <h3 class="exercise-title">Sáng tạo nội dung số</h3>
                             </div>
-                            <a href="Bài tập tuần 5 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                            <a href="https://docs.google.com/document/d/14np8uvbgQW4MKatrYgzDPyLQYBUiA2tpghMiHt_jPR8/edit?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở sản phẩm</a>
                         </div>
                         <div class="exercise-grid mt-6">
                             <div class="subpanel">
-                                <p class="subpanel-label">Task objective</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Present how generative AI supported ideation, drafting, visual experimentation, or multimedia content production in a structured workflow.</p>
+                                <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung theo Mục 5.4, thiết kế và hoàn thiện một sản phẩm nội dung số với sự trợ giúp của các công cụ AI.</p>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Process summary</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Replace this copy with the tools used, the prompts or inputs created, revision cycles, and the criteria used to select the final outputs.</p>
+                                <p class="subpanel-label">Quá trình thực hiện</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Ứng dụng các công cụ AI tạo sinh hình ảnh và văn bản, tôi đã lên ý tưởng, biên tập nội dung và thiết kế một sản phẩm truyền thông số mang dấu ấn cá nhân, đảm bảo sự hài hòa giữa tư duy thẩm mỹ con người và năng lực xử lý của máy tính.</p>
                             </div>
                         </div>
-                        <div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-                            <div class="gallery-card gallery-tall">
+                        <div class="gallery-grid-balanced mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                            <div class="gallery-card">
                                 <div>
-                                    <p class="gallery-tag">Poster</p>
-                                    <h4 class="gallery-title">AI visual concept</h4>
+                                    <p class="gallery-tag">Ý tưởng</p>
+                                    <h4 class="gallery-title">Phác thảo concept truyền thông</h4>
                                 </div>
                             </div>
                             <div class="gallery-card">
                                 <div>
-                                    <p class="gallery-tag">Script</p>
-                                    <h4 class="gallery-title">Caption drafting</h4>
+                                    <p class="gallery-tag">Văn bản</p>
+                                    <h4 class="gallery-title">Biên tập thông điệp nội dung</h4>
                                 </div>
                             </div>
                             <div class="gallery-card">
                                 <div>
-                                    <p class="gallery-tag">Audio</p>
-                                    <h4 class="gallery-title">Voiceover planning</h4>
+                                    <p class="gallery-tag">Thị giác</p>
+                                    <h4 class="gallery-title">Phối màu và bố cục AI hỗ trợ</h4>
                                 </div>
                             </div>
                             <div class="gallery-card gallery-accent">
                                 <div>
-                                    <p class="gallery-tag">Storyboard</p>
-                                    <h4 class="gallery-title">Product sequence</h4>
+                                    <p class="gallery-tag">Bài học</p>
+                                    <h4 class="gallery-title">Cân bằng giữa thẩm mỹ và công nghệ</h4>
                                 </div>
                             </div>
                         </div>
+                        <div class="mt-6 subpanel">
+                            <p class="subpanel-label">Bài học rút ra</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi làm chủ kỹ năng tích hợp công cụ AI vào quy trình sản xuất nội dung một cách thông minh, nâng cao năng lực tư duy thẩm mỹ và tính đổi mới sáng tạo trong không gian số.</p>
+                        </div>
                     </article>
 
-                    <article id="exercise-6" class="panel">
+                    <article id="exercise-6" data-exercise="06" data-reveal class="panel exercise-card tone-coral">
                         <div class="exercise-header">
                             <div>
-                                <p class="exercise-label">Exercise 6</p>
-                                <h3 class="exercise-title">Responsible AI in Learning &amp; Research</h3>
+                                <p class="exercise-label">Bài 6</p>
+                                <h3 class="exercise-title">An toàn và liêm chính học thuật trong môi trường số</h3>
                             </div>
-                            <a href="Bài tập tuần 6 môn CNS - Nguyễn Viết Minh.docx" download class="download-button">Download Report (.docx)</a>
+                            <a href="https://docs.google.com/document/d/1puZagnvJACbWzurHKsrhu0DgaiypOW9_aU5sJv6P2YY/edit?usp=sharing" target="_blank" rel="noreferrer" class="download-button">Mở sản phẩm</a>
                         </div>
                         <div class="exercise-grid mt-6">
                             <div class="subpanel">
-                                <p class="subpanel-label">Task objective</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Define your approach to using AI responsibly in academic settings, with attention to ethics, transparency, and academic integrity.</p>
+                                <p class="subpanel-label">Đề bài và mục tiêu</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Sử dụng AI có trách nhiệm trong học tập và nghiên cứu theo Mục 6.4, xây dựng bộ nguyên tắc cá nhân về đạo đức và liêm chính học thuật dựa trên các nghiên cứu thực tiễn.</p>
                             </div>
                             <div class="subpanel">
-                                <p class="subpanel-label">Process summary</p>
-                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize what responsible use means to you, the risks you identified, and the concrete rules you will follow in future coursework and research.</p>
+                                <p class="subpanel-label">Quá trình thực hiện</p>
+                                <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi đã tiến hành phân tích sâu sắc các khía cạnh đạo đức của AI như bản quyền, độ sai lệch thông tin và đạo văn. Trên cơ sở đó, tôi đúc kết thành một bộ 5-7 nguyên tắc cốt lõi cho bản thân khi sử dụng AI trong học tập để đảm bảo tính minh bạch và trung thực học thuật.</p>
                             </div>
                         </div>
                         <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                            <div class="principle-card">Always verify AI-generated facts before using them in coursework.</div>
-                            <div class="principle-card">Cite or disclose AI assistance whenever course rules require transparency.</div>
-                            <div class="principle-card">Protect personal and sensitive data when using online AI systems.</div>
-                            <div class="principle-card">Use AI to support learning, not replace independent thinking.</div>
-                            <div class="principle-card">Check for bias, missing perspectives, and harmful assumptions.</div>
-                            <div class="principle-card">Respect copyright and the original work of others.</div>
+                            <div class="principle-card">Luôn kiểm chứng thông tin AI tạo ra trước khi đưa vào bài học và nghiên cứu.</div>
+                            <div class="principle-card">Minh bạch về mức độ hỗ trợ của AI khi quy định học phần yêu cầu công khai.</div>
+                            <div class="principle-card">Bảo vệ dữ liệu cá nhân và dữ liệu nhạy cảm khi sử dụng nền tảng AI trực tuyến.</div>
+                            <div class="principle-card">Sử dụng AI để hỗ trợ học tập, không thay thế tư duy độc lập của bản thân.</div>
+                            <div class="principle-card">Chủ động nhận diện thiên lệch, lỗ hổng logic và góc nhìn bị bỏ sót trong kết quả AI.</div>
+                            <div class="principle-card">Tôn trọng bản quyền, trích dẫn nguồn và giữ vững liêm chính học thuật.</div>
+                        </div>
+                        <div class="mt-6 subpanel">
+                            <p class="subpanel-label">Bài học rút ra</p>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Tôi nâng cao nhận thức về trách nhiệm của người học trong kỷ nguyên số, hình thành tư duy phản biện sắc bén và đạo đức khoa học vững vàng khi đứng trước những thách thức mới từ công nghệ.</p>
                         </div>
                     </article>
                 </div>
@@ -496,62 +539,81 @@
 
         <section id="reflection" data-view="reflection" class="view-panel hidden space-y-6">
             <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-                <article class="panel">
+                <article data-reveal class="panel">
                     <span class="eyebrow">Trang Tổng kết</span>
-                    <h2 class="mt-4 font-display text-4xl font-bold text-slate-900 dark:text-white">Reflection, growth, and future application</h2>
-                    <p class="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">Use this page to present your project journey with honesty and depth. A strong reflection explains how your confidence evolved, what skills improved most, and how the course changed the way you approach digital tools and AI.</p>
+                    <h2 class="mt-4 font-display text-4xl font-bold text-slate-900 dark:text-white">Hành trình và sự trưởng thành</h2>
+                    <p class="mt-5 text-base leading-8 text-slate-600 dark:text-slate-300">Nhìn lại toàn bộ hành trình xây dựng Digital Portfolio này, tôi cảm thấy đây không chỉ là một bài tập học thuật đơn thuần mà là một trải nghiệm tự soi rọi và bứt phá giới hạn của bản thân. Việc phải tự mình thiết kế cấu trúc giao diện, biên tập lại từng sản phẩm từ Bài 1 đến Bài 6 ban đầu mang lại không ít áp lực, nhưng cũng chính vì thế mà tôi cảm nhận rõ niềm vui sáng tạo và sự tự hào khi các mảnh ghép kiến thức được hệ thống hóa một cách trực quan và chuyên nghiệp.</p>
                     <div class="mt-8 grid gap-4 sm:grid-cols-2">
                         <div class="objective-card">
-                            <h3 class="font-semibold text-slate-900 dark:text-white">Experiences &amp; emotions</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Describe the moments that felt exciting, difficult, surprising, or satisfying throughout the portfolio-building process.</p>
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Trải nghiệm và cảm nhận cá nhân</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Quá trình thực hiện giúp tôi đi từ áp lực, lúng túng sang sự chủ động và tự tin. Khi nhìn thấy từng sản phẩm được sắp xếp thành một cấu trúc logic, tôi cảm nhận rõ giá trị của việc học thông qua thực hành và phát triển tư duy hệ thống trên nền tảng số.</p>
                         </div>
                         <div class="objective-card">
-                            <h3 class="font-semibold text-slate-900 dark:text-white">Knowledge &amp; skills gained</h3>
-                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Summarize the digital, research, communication, and AI literacy skills that you can now apply more confidently.</p>
+                            <h3 class="font-semibold text-slate-900 dark:text-white">Kiến thức và kỹ năng cốt lõi đã tích lũy</h3>
+                            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">Môn học trang bị cho tôi tư duy quản lý và khai thác dữ liệu, kỹ năng định vị thông tin chuẩn xác, khả năng làm chủ kỹ nghệ prompt, sử dụng AI như một trợ lý học thuật và kinh nghiệm hợp tác trong môi trường số.</p>
                         </div>
                     </div>
                 </article>
 
-                <article class="panel">
-                    <span class="eyebrow">Self Assessment</span>
+                <article data-reveal class="panel">
+                    <span class="eyebrow">Tự đánh giá</span>
                     <div class="mt-6 space-y-4">
                         <div class="reflection-card">
-                            <p class="reflection-label">Most satisfying elements</p>
-                            <p class="reflection-text">Add the parts of the project you are proudest of, such as strong visual organization, better prompt writing, effective teamwork, or your ability to present information professionally.</p>
+                            <p class="reflection-label">Điều hài lòng nhất</p>
+                            <p class="reflection-text">Điều tôi hài lòng nhất là khả năng kết nối những kiến thức rời rạc thành một cấu trúc rõ ràng, biến website này thành minh chứng cho sự tiến bộ trong tư duy số, kỹ năng trình bày và khả năng tự học với công nghệ mới.</p>
                         </div>
                         <div class="reflection-card">
-                            <p class="reflection-label">Challenges faced</p>
-                            <p class="reflection-text">Document the obstacles you encountered, such as time management, tool limitations, technical issues, or difficulty evaluating AI output critically.</p>
+                            <p class="reflection-label">Thách thức đối mặt</p>
+                            <p class="reflection-text">Thách thức lớn nhất là dung hòa giữa công nghệ số và tính học thuật của chuyên ngành Sinh học: làm sao để ứng dụng AI tạo sinh mà không vi phạm đạo đức khoa học, và làm sao để tổ chức một lượng lớn tài liệu nghiên cứu mà không bị quá tải.</p>
                         </div>
                         <div class="reflection-card">
-                            <p class="reflection-label">Future application</p>
-                            <p class="reflection-text">Explain how the digital methods and AI practices from this course can be used in future classes, internships, freelance work, or personal learning projects.</p>
+                            <p class="reflection-label">Định hướng tương lai</p>
+                            <p class="reflection-text">Là sinh viên Sinh học của Trường Đại học Khoa học Tự nhiên - ĐHQGHN, tôi hiểu rằng khoa học hiện đại không thể tách rời công nghệ số. Những kỹ năng quản lý dữ liệu lớn, tư duy phân tích hệ thống và năng lực ứng dụng AI có trách nhiệm từ Digital Portfolio này sẽ theo tôi vào phòng thí nghiệm, vào các dự án nghiên cứu y sinh hay Sinh học phân tử trong tương lai.</p>
                         </div>
                     </div>
                 </article>
             </div>
 
-            <article class="panel">
-                <span class="eyebrow">Closing Statement</span>
+            <article data-reveal class="panel">
+                <span class="eyebrow">Tổng kết năng lực</span>
                 <div class="mt-6 grid gap-4 lg:grid-cols-3">
-                    <div class="timeline-item">I became more systematic in organizing digital materials and managing outputs across different file types.</div>
-                    <div class="timeline-item">I learned to treat AI as a tool that needs direction, verification, and ethical boundaries.</div>
-                    <div class="timeline-item">I now have a portfolio foundation that can evolve with future coursework and professional projects.</div>
+                    <div class="timeline-item">Tôi rèn luyện được tư duy quản lý dữ liệu và tổ chức tài liệu nghiên cứu một cách hệ thống, khoa học.</div>
+                    <div class="timeline-item">Tôi học cách xem AI là công cụ cần được định hướng, kiểm chứng và đặt trong khuôn khổ đạo đức rõ ràng.</div>
+                    <div class="timeline-item">Tôi đã có một nền tảng Portfolio có thể tiếp tục mở rộng cùng các học phần, đề tài và mục tiêu nghiên cứu trong tương lai.</div>
                 </div>
+            </article>
+
+            <article data-reveal class="panel text-center">
+                <span class="eyebrow justify-center">Lời cảm ơn</span>
+                <p class="mx-auto mt-6 max-w-4xl text-lg leading-9 text-slate-700 dark:text-slate-200">
+                    Chân thành cảm ơn Quý Thầy Cô và các bạn đã ghé thăm Digital Portfolio của tôi. Chúc mọi người luôn giữ vững niềm đam mê và gặt hái được nhiều thành công trên hành trình tri thức của riêng mình!
+                </p>
             </article>
         </section>
     </main>
 
     <footer class="border-t border-slate-200/80 bg-white/70 backdrop-blur-xl transition-colors duration-500 dark:border-white/10 dark:bg-slate-950/70">
-        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-6 text-sm text-slate-600 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8 dark:text-slate-400">
+        <div class="mx-auto grid max-w-7xl gap-6 px-4 py-6 text-sm text-slate-600 sm:px-6 lg:grid-cols-[1.2fr_0.8fr] lg:px-8 dark:text-slate-400">
             <div>
-                <p class="font-semibold text-slate-900 dark:text-white">Digital Portfolio Template</p>
-                <p>Designed for the Introduction to Digital Technology and AI Applications course.</p>
+                <p class="font-semibold text-slate-900 dark:text-white">Nguyễn Viết Minh • Digital Portfolio</p>
+                <p class="mt-2 max-w-2xl leading-7">Digital Portfolio được xây dựng cho môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo, đồng thời là hồ sơ học tập, kho lưu trữ sản phẩm và nền tảng trình bày năng lực số trong định hướng nghiên cứu Sinh học.</p>
             </div>
-            <div class="flex flex-wrap gap-4">
-                <a href="#intro" data-route-link="intro" class="footer-link">Introduction</a>
-                <a href="#projects" data-route-link="projects" class="footer-link">Projects</a>
-                <a href="#reflection" data-route-link="reflection" class="footer-link">Reflection</a>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="contact-card">
+                    <p class="contact-label">Điều hướng</p>
+                    <div class="mt-3 flex flex-col gap-2">
+                        <a href="#intro" data-route-link="intro" class="footer-link">Trang giới thiệu</a>
+                        <a href="#projects" data-route-link="projects" class="footer-link">Trang dự án</a>
+                        <a href="#reflection" data-route-link="reflection" class="footer-link">Trang tổng kết</a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-label">Liên hệ</p>
+                    <div class="mt-3 flex flex-col gap-2 text-sm leading-7">
+                        <a href="tel:0389063672" class="footer-link">0389063672</a>
+                        <a href="mailto:minhdaayll@gmail.com" class="footer-link">minhdaayll@gmail.com</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
