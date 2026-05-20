@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const htmlRoot = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -6,10 +5,18 @@ const mobileMenu = document.getElementById('mobile-menu');
 const viewPanels = [...document.querySelectorAll('[data-view]')];
 const routeButtons = [...document.querySelectorAll('[data-route]')];
 const routeLinks = [...document.querySelectorAll('[data-route-link]')];
+const exerciseLinks = [...document.querySelectorAll('.exercise-link')];
+const projectsView = document.getElementById('projects');
 const storageKey = 'digital-portfolio-theme';
 
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme = localStorage.getItem(storageKey);
+let savedTheme = null;
+
+try {
+    savedTheme = localStorage.getItem(storageKey);
+} catch {
+    savedTheme = null;
+}
 
 const applyTheme = (theme) => {
     const shouldUseDark = theme === 'dark';
@@ -20,11 +27,40 @@ applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
 
 themeToggle?.addEventListener('click', () => {
     const nextTheme = htmlRoot.classList.contains('dark') ? 'light' : 'dark';
-    localStorage.setItem(storageKey, nextTheme);
+    try {
+        localStorage.setItem(storageKey, nextTheme);
+    } catch {
+        // Ignore storage failures and still apply the theme for the current session.
+    }
     applyTheme(nextTheme);
 });
 
-const setActiveRoute = (routeName) => {
+const resolveNavigationState = (hashValue) => {
+    const cleanHash = hashValue.replace('#', '');
+
+    if (!cleanHash) {
+        return { route: 'intro', anchorId: null };
+    }
+
+    if (viewPanels.some((panel) => panel.dataset.view === cleanHash)) {
+        return { route: cleanHash, anchorId: null };
+    }
+
+    const anchorElement = document.getElementById(cleanHash);
+    if (anchorElement && projectsView?.contains(anchorElement)) {
+        return { route: 'projects', anchorId: cleanHash };
+    }
+
+    return { route: 'intro', anchorId: null };
+};
+
+const setActiveRoute = (routeName, options = {}) => {
+    const {
+        anchorId = null,
+        updateHash = true,
+        scrollBehavior = 'smooth',
+        scrollToTop = true,
+    } = options;
     const fallback = 'intro';
     const activeRoute = viewPanels.some((panel) => panel.dataset.view === routeName) ? routeName : fallback;
 
@@ -41,7 +77,7 @@ const setActiveRoute = (routeName) => {
     routeLinks.forEach((link) => {
         const isActive = link.dataset.routeLink === activeRoute;
         link.classList.toggle('text-cyan-700', isActive);
-        link.classList.toggle('dark:text-cyan', isActive);
+        link.classList.toggle('dark:text-cyan-300', isActive);
         link.setAttribute('aria-current', isActive ? 'page' : 'false');
     });
 
@@ -50,12 +86,20 @@ const setActiveRoute = (routeName) => {
         mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
 
-    const nextHash = `#${activeRoute}`;
-    if (window.location.hash !== nextHash) {
+    const nextHash = anchorId ? `#${anchorId}` : `#${activeRoute}`;
+    if (updateHash && window.location.hash !== nextHash) {
         history.replaceState(null, '', nextHash);
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (anchorId) {
+        const anchorElement = document.getElementById(anchorId);
+        anchorElement?.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+        return;
+    }
+
+    if (scrollToTop) {
+        window.scrollTo({ top: 0, behavior: scrollBehavior });
+    }
 };
 
 routeButtons.forEach((button) => {
@@ -71,87 +115,20 @@ routeLinks.forEach((link) => {
     });
 });
 
-mobileMenuToggle?.addEventListener('click', () => {
-    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-    mobileMenuToggle.setAttribute('aria-expanded', String(!isExpanded));
-    mobileMenu?.classList.toggle('hidden', isExpanded);
-});
-
-window.addEventListener('hashchange', () => {
-    const routeName = window.location.hash.replace('#', '') || 'intro';
-    setActiveRoute(routeName);
-});
-
-=======
-const htmlRoot = document.documentElement;
-const themeToggle = document.getElementById('theme-toggle');
-const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const viewPanels = [...document.querySelectorAll('[data-view]')];
-const routeButtons = [...document.querySelectorAll('[data-route]')];
-const routeLinks = [...document.querySelectorAll('[data-route-link]')];
-const storageKey = 'digital-portfolio-theme';
-
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedTheme = localStorage.getItem(storageKey);
-
-const applyTheme = (theme) => {
-    const shouldUseDark = theme === 'dark';
-    htmlRoot.classList.toggle('dark', shouldUseDark);
-};
-
-applyTheme(savedTheme || (systemPrefersDark ? 'dark' : 'light'));
-
-themeToggle?.addEventListener('click', () => {
-    const nextTheme = htmlRoot.classList.contains('dark') ? 'light' : 'dark';
-    localStorage.setItem(storageKey, nextTheme);
-    applyTheme(nextTheme);
-});
-
-const setActiveRoute = (routeName) => {
-    const fallback = 'intro';
-    const activeRoute = viewPanels.some((panel) => panel.dataset.view === routeName) ? routeName : fallback;
-
-    viewPanels.forEach((panel) => {
-        panel.classList.toggle('hidden', panel.dataset.view !== activeRoute);
-    });
-
-    routeButtons.forEach((button) => {
-        const isActive = button.dataset.route === activeRoute;
-        button.classList.toggle('is-active', isActive);
-        button.setAttribute('aria-current', isActive ? 'page' : 'false');
-    });
-
-    routeLinks.forEach((link) => {
-        const isActive = link.dataset.routeLink === activeRoute;
-        link.classList.toggle('text-cyan-700', isActive);
-        link.classList.toggle('dark:text-cyan', isActive);
-        link.setAttribute('aria-current', isActive ? 'page' : 'false');
-    });
-
-    if (mobileMenu && mobileMenuToggle) {
-        mobileMenu.classList.add('hidden');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    const nextHash = `#${activeRoute}`;
-    if (window.location.hash !== nextHash) {
-        history.replaceState(null, '', nextHash);
-    }
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
-routeButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        setActiveRoute(button.dataset.route);
-    });
-});
-
-routeLinks.forEach((link) => {
+exerciseLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
         event.preventDefault();
-        setActiveRoute(link.dataset.routeLink);
+        const anchorId = link.getAttribute('href')?.replace('#', '');
+        if (!anchorId) {
+            return;
+        }
+
+        setActiveRoute('projects', {
+            anchorId,
+            updateHash: true,
+            scrollBehavior: 'smooth',
+            scrollToTop: false,
+        });
     });
 });
 
@@ -162,9 +139,19 @@ mobileMenuToggle?.addEventListener('click', () => {
 });
 
 window.addEventListener('hashchange', () => {
-    const routeName = window.location.hash.replace('#', '') || 'intro';
-    setActiveRoute(routeName);
+    const { route, anchorId } = resolveNavigationState(window.location.hash);
+    setActiveRoute(route, {
+        anchorId,
+        updateHash: false,
+        scrollBehavior: 'smooth',
+        scrollToTop: !anchorId,
+    });
 });
 
->>>>>>> 9b1e3b3b8507527a4958bf497af76ea46d393622
-setActiveRoute(window.location.hash.replace('#', '') || 'intro');
+const initialState = resolveNavigationState(window.location.hash);
+setActiveRoute(initialState.route, {
+    anchorId: initialState.anchorId,
+    updateHash: !window.location.hash,
+    scrollBehavior: 'auto',
+    scrollToTop: !initialState.anchorId,
+});
